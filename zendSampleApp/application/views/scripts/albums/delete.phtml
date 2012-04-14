@@ -1,0 +1,17 @@
+<?php
+$this->title = "Delete album";
+$this->headTitle($this->title);
+?>
+<div class="deleteForm">
+    <p>Želite izbrisati
+        '<?php echo $this->escape($this->album['title']); ?>' od
+        '<?php echo $this->escape($this->album['artist']); ?>'?
+    </p>
+    <form action="<?php echo $this->url(array('action' => 'delete')); ?>" method="post">
+        <div>
+            <input type="hidden" name="id" value="<?php echo $this->album['id']; ?>" />
+            <input type="submit" name="del" value="Da" />
+            <input type="submit" name="del" value="Ne" />
+        </div>
+    </form>
+</div>

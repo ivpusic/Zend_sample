@@ -1,0 +1,37 @@
+<?php
+$this->headMeta()->appendHttpEquiv(
+        'Content-Type', 'text/html;charset=utf-8');
+
+echo $this->doctype();
+?>  
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+    <head>
+        <?php echo $this->headMeta(); ?> 
+        <?php echo $this->headTitle(); ?> 
+        <?php echo $this->headLink()->appendStylesheet($this->baseUrl() . '/css/site.css'); ?> 
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="header">
+                <h1 id="mainTitle">Ivan Pušić Zend Framework</h1>
+            </div>
+
+            <div id="menu">
+                <ul>
+                    <li><?php echo $this->loggedInAs(); ?></li>
+                    <a href="http://www.blog.qarea.com/wp-content/uploads/2011/03/ZendFramework-logo.png">Zend</a>
+                </ul>
+            </div>
+
+            <div id="content">
+                <?php echo $this->layout()->content; ?>
+            </div>
+
+        </div>
+
+    </body>
+
+
+
+</html>

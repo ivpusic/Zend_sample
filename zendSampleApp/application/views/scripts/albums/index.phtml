@@ -1,0 +1,28 @@
+<?php
+$this->title = "My Albums";
+$this->headTitle($this->title);
+?>
+<p><a class="addAction" href="<?php echo $this->url(array('controller' => 'albums',
+    'action' => 'add'));
+?>">Dodaj novi album</a></p>
+<table border ="2" class="tablica">
+    <tr>
+        <th>Naziv</th>
+        <th>Izvođač</th>
+        <th>Akcija</th>
+    </tr>
+<?php foreach ($this->albums as $album) : ?>
+        <tr>
+            <td><?php echo $this->escape($album->title); ?></td>
+            <td><?php echo $this->escape($album->artist); ?></td>
+            <td>
+                <a href="<?php echo $this->url(array('controller' => 'albums',
+        'action' => 'edit', 'id' => $album->id));
+    ?>">Uredi</a>
+                <a href="<?php echo $this->url(array('controller' => 'albums',
+        'action' => 'delete', 'id' => $album->id));
+    ?>">Briši</a>
+            </td>
+        </tr>
+<?php endforeach; ?>
+</table>
